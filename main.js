@@ -9,6 +9,13 @@ async function getMovies() {
 
     console.log(respData);
 
+    // respData.results.forEach(movie => {
+    //     const img = document.createElement("img");
+    //     img.src = IMGPATH + movie.poster_path;
+
+    //     document.body.appendChild(img);
+    // });
+
     return respData;
 }
 
