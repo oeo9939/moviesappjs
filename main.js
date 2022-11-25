@@ -4,6 +4,8 @@ const IMGPATH = 'https://image.tmdb.org/t/p/w1280/';
 
 
 const main = document.querySelector("main");
+const form = document.querySelector("form");
+
 
 async function getMovies() {
     const resp = await fetch(APIURL);

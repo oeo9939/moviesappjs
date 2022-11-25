@@ -10,6 +10,32 @@ body{
     margin: 0;
 }
 
+header{
+    background-color: #373b69;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1.5rem;
+}
+
+.search{
+    border-radius: 50px;
+    background-color: #181b41;
+    padding: 0.5rem;
+    border: 2px solid #181b41;
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+.search::placeholder{
+    color: rgba(165, 161, 131, 0.712);
+    font-family: inherit;
+    padding: 0.5rem;
+}
+
+.search:focus{
+    outline: none;
+}
+
 main{
     display: flex;
     flex-wrap: wrap;
