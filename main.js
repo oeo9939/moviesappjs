@@ -3,6 +3,8 @@ const APIURL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.d
 const IMGPATH = 'https://image.tmdb.org/t/p/w1280/';
 
 
+const main = document.querySelector("main");
+
 async function getMovies() {
     const resp = await fetch(APIURL);
     const respData = await resp.json();
@@ -20,7 +22,7 @@ async function getMovies() {
         <img src= "${IMGPATH + poster_path}" alt="${title}">
         <div class="movie-info">
             <h3>${title}</h3>
-            <span>${vote_average}</span>
+            <span class="${getClassByRate(vote_average)}">${vote_average}</span>
         </div>`;
 
         // const img = document.createElement("img");
@@ -28,10 +30,20 @@ async function getMovies() {
 
         // document.body.appendChild(img);
 
-        document.body.appendChild(movieEl);
+        main.appendChild(movieEl);
     });
 
     return respData;
+}
+
+function getClassByRate(vote) {
+    if(vote > 8) {
+        return "green";
+    } else if(vote >= 5) {
+        return "orange";
+    } else {
+        return "red";
+    }
 }
 
 getMovies();
